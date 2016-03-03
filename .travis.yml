@@ -1,4 +1,15 @@
 language: haxe
+
 haxe:
   - "3.2.1"
-  - development
+
+install:
+  # Install haxelibs
+  - haxelib install hxcpp
+  - haxelib install hxcs
+  - haxelib install munit
+  - haxelib install hamcrest
+  - haxelib list
+  
+script:
+  haxelib run munit test
