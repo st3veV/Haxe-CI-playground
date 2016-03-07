@@ -11,10 +11,10 @@ install:
   - haxelib install hamcrest
   - haxelib list
   
-addons:
-  apt:
-    packages:
-      - lynx
-  
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+
 script:
   haxelib run munit test -kill-browser -browser firefox
