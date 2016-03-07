@@ -10,8 +10,11 @@ install:
   - haxelib install munit
   - haxelib install hamcrest
   - haxelib list
-  # Install lynx
-  - apt-get install lynx
+  
+addons:
+  apt:
+    packages:
+      - lynx
   
 script:
   haxelib run munit test
