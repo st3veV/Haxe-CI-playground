@@ -17,4 +17,4 @@ addons:
       - lynx
   
 script:
-  haxelib run munit test
+  haxelib run munit test -kill-browser -browser firefox
